@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: linear-gradient(#141625, #1e244f);
+  height: 100vh;
+}
+/*background-image:linear-gradient(to bottom ,#141625 , #1E244F); */
+
+.text {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 25px;
+  margin-top: 8%;
+}
+
+.accordion {
+  height: 100%;
+  background-color: #ffff;
+  padding: 10px;
+  /* max-width: 1000px; */
+  display: flex;
+  flex-direction: column;
+  /* margin:  -2rem auto; */
+  border-radius: 10px 10px 10px 10px;
+}
+
+div.accordion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 45%;
+  width: 50%;
+  margin-top: 10%;
+}
+
+h1 {
+  font-size: 14px;
+  padding-left: 30px;
+}
+
+p {
+  padding-left: 0;
+  text-align: justify;
+  color: #878787;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.accordion-item {
+  background-color: #f2f2f2;
+  /*border: solid 1px;  */
+  width: 78%;
+  padding: 20px;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0px 2px 0 #878787;
+}
+
+.accordion-item-header {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-item-header::after {
+  content: "\25BE";
+  font-size: 40px;
+  position: absolute;
+  /* right: 1rem; */
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordion-item-header.active::after {
+  transform: rotate(-89deg); /*Mudar a rotação da seta   */
+}
+
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  /* borda colocar    */
+}
+
+.accordion-item-header.active + .accordion-item-body {
+  max-height: 200px;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+
+  .body {
+    height: 100vh;
+  }
+
+  div.accordion {
+    width: 91%;
+    margin: 2%;
+    margin-top: 20%;
+  }
+  p {
+    padding-left: 9%;
+    font-size: 14px;
+  }
+
+  .accordion-item {
+    width: 90%;
+  }
+  h1 {
+    font-size: 15px;
+    padding-left: 30px;
+  }
+}
